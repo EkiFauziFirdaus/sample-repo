@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>{{title}}</h1>
+      <div *ngIf="slideProduk">
+        <ul>
+          <li *ngFor="let item of slideProduk">
+            <img [src]="item.gambar">
+          </li>
+        </ul>
+
+        <!--CAROUSEL-->
+        <carousel [interval]="myInterval" [noWrap]="noWrapSlides" [(activeSlide)]="activeSlideIndex">
+          <slide *ngFor="let slide of slideProduk">
+            <img [src]="slide.image">
+          </slide>
+        </carousel>
+      </div>
+    </div>
+  </div>
+</div>
