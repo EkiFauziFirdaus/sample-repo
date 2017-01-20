@@ -3,18 +3,23 @@
     <div class="col-sm-12">
       <h1>{{title}}</h1>
       <div *ngIf="slideProduk">
+
+        <!--DISPLAYING IMAGE USING LIST-->
         <ul>
           <li *ngFor="let item of slideProduk">
             <img [src]="item.gambar">
           </li>
         </ul>
+        <!---->
 
-        <!--CAROUSEL-->
+        <!--DISPLAYING IMAGE USING CAROUSEL-->
         <carousel [interval]="myInterval" [noWrap]="noWrapSlides" [(activeSlide)]="activeSlideIndex">
           <slide *ngFor="let slide of slideProduk">
-            <img [src]="slide.image">
+            <img [src]="slide.gambar">
           </slide>
         </carousel>
+        <!---->
+        
       </div>
     </div>
   </div>
